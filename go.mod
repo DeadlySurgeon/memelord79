@@ -1,4 +1,4 @@
-module deadly.surgery/memerlord79
+module deadly.surgery/memelord79
 
 go 1.13
 

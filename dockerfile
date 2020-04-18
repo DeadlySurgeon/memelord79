@@ -1,7 +1,7 @@
 FROM golang:1.14-alpine AS builder
 
-COPY . /go/src/deadly.surgery/memerlord79
-WORKDIR /go/src/deadly.surgery/memerlord79
+COPY . /go/src/deadly.surgery/memelord79
+WORKDIR /go/src/deadly.surgery/memelord79
 
 # Update our certificates incase our builder is out of date.
 RUN apk --no-cache add ca-certificates upx git build-base gcc abuild binutils binutils-doc gcc-doc
