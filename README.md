@@ -1,6 +1,6 @@
 # MemeLord79
 
-memeLord79 is a Meme Lord bent on posting images to Slack. 
+MemeLord79 is a Meme Lord bent on posting images to Slack. 
 Originally, the application was going to only be built into Github's Actions,
 but then I changed my mind because a lot of prepwork needs to be done in the 
 container to save on time, so I might as well just use Go and package it into
@@ -28,7 +28,7 @@ decreases the container size in the end.
 Generate an RSA keypair. 
 
 Put the public key in the git repo's deploy token section, and enable 
-"Allow write access". This will allow memeLord to use the git repository and 
+"Allow write access". This will allow MemeLord to use the git repository and 
 use the "state" branch as a pseudo database.
 
 The private key should be in the env `SSH_PRIVATE_KEY`. 
