@@ -57,7 +57,7 @@ func genBlock(text string, imageURL string) ([]byte, error) {
 				"text": m{
 					"type": "mrkdwn",
 					"text": fmt.Sprintf(
-						`"*%s*"`,
+						`> *%s*`,
 						text,
 					),
 				},
