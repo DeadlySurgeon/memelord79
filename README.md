@@ -23,6 +23,15 @@ go-get is smaller than regular git. It increases the code footprint, but
 decreases the container size in the end.
 
 
+## GitStore
+
+MemeLord79 uses git as a datastore of sorts to persist data from one call to 
+the next. I likely can get away without needing to do this, but I felt like it
+was a neat thing to do, plus it should help reduce the amount of times I need 
+to call Reddit's API as I can easily cache the results.
+
+Specify the repository to use with the env  `MEMELORD_GIT_REPO`
+
 ## Authentication
 
 Generate an RSA keypair. 
@@ -31,7 +40,7 @@ Put the public key in the git repo's deploy token section, and enable
 "Allow write access". This will allow MemeLord to use the git repository and 
 use the "state" branch as a pseudo database.
 
-The private key should be in the env `SSH_PRIVATE_KEY`. 
+The private key should be in the env  `MEMELORD_SSH_PRIVATE_KEY`
 
 
 ## Docker
