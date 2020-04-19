@@ -5,21 +5,25 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+	"os"
 	"time"
 
 	"deadly.surgery/memelord79/internal/state"
 )
 
-var repo = "git@github.com:DeadlySurgeon/memelord79.git"
-
 func main() {
+	repo := os.Getenv("MEMELORD_GIT_REPO")
+	if repo == "" {
+		log.Fatalln("ENV `MEMELORD_GIT_REPO` must be set.")
+	}
+
 	store, err := state.Get(repo)
 	if err != nil {
-		log.Fatalf("Failed to get state: %v", err)
+		log.Fatalf("Failed to get state: %v\n", err)
 	}
 	defer func() {
 		if err = state.Save(repo, store); err != nil {
-			log.Fatalf("Failed to save state: %v", err)
+			log.Fatalf("Failed to save state: %v\n", err)
 		}
 	}()
 

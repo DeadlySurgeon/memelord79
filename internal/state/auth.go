@@ -20,9 +20,9 @@ func init() {
 // Authenticate gets the key and prepares SSH for go-git to use.
 func Authenticate(key []byte) (*gitSSH.PublicKeys, error) {
 	if key == nil {
-		keySTR := os.Getenv("SSH_PRIVATE_KEY")
+		keySTR := os.Getenv("MEMELORD_SSH_PRIVATE_KEY")
 		if keySTR == "" {
-			return nil, fmt.Errorf("ENV `SSH_PRIVATE_KEY` is not set with a private RSA key")
+			return nil, fmt.Errorf("ENV `MEMELORD_SSH_PRIVATE_KEY` is not set with a private RSA key")
 		}
 		key = []byte(keySTR)
 	}
