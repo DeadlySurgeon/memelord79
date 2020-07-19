@@ -13,8 +13,12 @@ import (
 var auth transport.AuthMethod
 
 func init() {
+	var err error
 	// try to load a default key to use
-	auth, _ = Authenticate(nil)
+	auth, err = Authenticate(nil)
+	if err != nil {
+		panic(err)
+	}
 }
 
 // Authenticate gets the key and prepares SSH for go-git to use.
